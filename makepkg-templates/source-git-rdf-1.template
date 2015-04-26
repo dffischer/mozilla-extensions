@@ -1,7 +1,5 @@
 # template input; name=source-git-plain
 
-# template input; name=rdf-query
-
 pkgver() {
   sparql '<urn:mozilla:install-manifest> em:version ?x' | tr - .
   echo -n .
