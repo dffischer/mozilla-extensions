@@ -4,27 +4,11 @@ pkgver=1.4
 pkgrel=1
 pkgdesc='Hide the tab bar if there is only one tab.'
 url='http://forums.mozillazine.org/viewtopic.php?f=48&t=2141579'
-arch=('any')
 license=('MPLv2')
 depends=('firefox')
-makedepends=('unzip')
-source=("${pkgname}.xpi::https://addons.mozilla.org/firefox/downloads/latest/hide-tab-bar-with-one-tab/")
 md5sums=('2fdceda82039c594c808be743fe8c59e')
 
-_extract() {
-  [[ -d extract ]] && return || mkdir extract
-  unzip -q "${pkgname}.xpi" -d extract
-  cd "extract"
-}
-
-prepare() {
-  _extract
-}
-
-pkgver() {
-  _extract
-  grep -Pom1 '(?<=<em:version>)[[:digit:]\.]*(?=</em:version>)' install.rdf
-}
+# template input; name=source-xpi
 
 package() {
   cd extract
