@@ -1,3 +1,9 @@
+# Templates for often used PKGBUILD snippets
+
+As comments in the template code are not stripped when they are input, this file provides overview and documentation.
+
+All templates end with a version number which should be increased on major changes. There always exists a symbolic link to the newest version, lacking any number.
+
 - [source-xpi](source-xpi.template) downloads and extracts the latest version of a package and looks up the `$pkgver`.
   - The extension contents are placed unpacked in the `$srcdir`.
   - The latest version will always be fetched from [Mozilla's Add-On homepage](https://addons.mozilla.org/), though no checksums are provided for this file. The `PKGBUILD` should still include them in addition to the template.
