@@ -2,6 +2,8 @@
 
 This repository collects packages to globally install [add-ons](https://addons.mozilla.org/) for [Mozilla](https://www.mozilla.org/) software, such as [Firefox](https://www.mozilla.org/firefox/) and [Thunderbird](https://www.mozilla.org/thunderbird/), via [Arch Linux](http://archlinux.org/)'s [User Repository](https://aur.archlinux.org/). They are all built and installed in a similar way, so collecting them here eases maintenance. Code fragments are unified and shared among them via makepkg-templates. Purpose and effects of these are [described in their directory](makepkg-templates).
 
+The [makepkg-template for git packages](https://github.com/dffischer/git-makepkg-template) are needed to expand some of the PKGBUILDs in this repository. [Install them globally](https://aur.archlinux.org/packages/git-makepkg-template-git/) or copy them into the [makepkg-templates directory](makepkg-templates) after cloning.
+
 
 ## Contributing
 
