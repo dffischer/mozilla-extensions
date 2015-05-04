@@ -1,0 +1,8 @@
+# template input; name=git-source
+
+pkgver() {
+  cd $_gitname
+  grep -Pom1 '(?<=<em:version>)[[:digit:]\.]*(?=</em:version>)' install.rdf
+}
+
+# vim: filetype=sh

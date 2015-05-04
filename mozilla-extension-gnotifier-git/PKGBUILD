@@ -15,12 +15,7 @@ provides=('firefox-extension-gnotifier' 'thunderbird-extension-gnotifier')
 conflicts=('firefox-extension-gnotifier' 'thunderbird-extension-gnotifier')
 options=('!emptydirs')
 
-# template input; name=git-source
-
-pkgver() {
-  cd $_gitname
-  grep -Pom1 '(?<=<em:version>)[[:digit:]\.]*(?=</em:version>)' install.rdf
-}
+# template input; name=git-install-rdf
 
 package() {
   cd $_gitname
