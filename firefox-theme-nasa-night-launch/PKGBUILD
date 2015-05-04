@@ -13,7 +13,6 @@ md5sums=('20f5e5deb054ca27bee2baa39a783202')
 # template input; name=source-xpi
 
 package() {
-  cd extract
   local dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
   install -d $dstdir
   cp -r * $dstdir

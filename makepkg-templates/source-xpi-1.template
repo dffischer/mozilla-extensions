@@ -1,20 +1,12 @@
 [ "$arch" ] || arch=('any')
 
-makedepends+=('unzip')
-source+=("${pkgname}.xpi::https://addons.mozilla.org/firefox/downloads/latest/${pkgname#*-*-}/platform:2/")
-
-_extract() {
-  [[ -d extract ]] && return || mkdir extract
-  unzip -q "${pkgname}.xpi" -d extract 
-  cd "extract"
-}
+source+=("${pkgname}.zip::https://addons.mozilla.org/firefox/downloads/latest/${pkgname#*-*-}/platform:2/")
 
 prepare() {
-  _extract
+  rm ${pkgname}.zip
 }
 
 pkgver() {
-  _extract
   grep -Pom1 '(?<=<em:version>)[[:digit:]\.]*(?=</em:version>)' install.rdf
 }
 

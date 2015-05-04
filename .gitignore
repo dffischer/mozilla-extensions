@@ -2,4 +2,4 @@ PKGBUILD.expanded
 *.src.tar*
 *.pkg.tar*
 */*/
-*.xpi
+*.zip
