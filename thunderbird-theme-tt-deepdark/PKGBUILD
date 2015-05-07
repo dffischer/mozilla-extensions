@@ -5,13 +5,7 @@ pkgrel=1
 pkgdesc='Smooth dark theme for Thunderbird'
 url='https://addons.mozilla.org/de/thunderbird/addon/tt-deepdark/'
 license=('custom:noncommercial')
-depends=('thunderbird')
 md5sums=('dca222e21df42ab572975072f83a68c7')
 
 # template input; name=source-xpi
-
-package() {
-  local dstdir="$pkgdir/usr/lib/thunderbird/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
-  install -d $dstdir
-  cp -r * $dstdir
-}
+# template input; name=package

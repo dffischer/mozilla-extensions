@@ -8,4 +8,4 @@ license=('custom:noncommercial')
 md5sums=('78f55cc54ce4678319446512b45e2262')
 
 # template input; name=source-xpi
-# template input; name=package-firefox
+# template input; name=package

@@ -8,4 +8,4 @@ license=('GPL')
 md5sums=('591e1f08e1c17b0962280e6330051b3c')
 
 # template input; name=source-xpi
-# template input; name=package-firefox
+# template input; name=package

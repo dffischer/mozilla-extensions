@@ -5,13 +5,8 @@ pkgrel=1
 pkgdesc='Provides better integration with Gnome using standard notifications and other features'
 url='http://davidmartinez.net/proyectos/gnomeintegration'
 license=('GPLv3')
-depends=('thunderbird' 'libnotify')
+depends=('libnotify')
 md5sums=('b6832dd3d47a0d19734923f3c5e21a33')
 
 # template input; name=source-xpi
-
-package() {
-  local dstdir="$pkgdir/usr/lib/thunderbird/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
-  install -d $dstdir
-  cp -r * $dstdir
-}
+# template input; name=package
