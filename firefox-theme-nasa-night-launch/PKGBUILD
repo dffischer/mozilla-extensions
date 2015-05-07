@@ -6,14 +6,8 @@ pkgdesc="Dark theme for Firefox. Inspired by the night launch of STS-116."
 pkgver=0.6.20150330
 pkgrel=1
 url="http://home.comcast.net/~username54321/starfield/index.html"
-depends=("firefox")
 license=('custom')
 md5sums=('20f5e5deb054ca27bee2baa39a783202')
 
 # template input; name=source-xpi
-
-package() {
-  local dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
-  install -d $dstdir
-  cp -r * $dstdir
-}
+# template input; name=package-firefox

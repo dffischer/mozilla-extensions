@@ -5,13 +5,7 @@ pkgrel=1
 pkgdesc='Hide the tab bar if there is only one tab.'
 url='http://forums.mozillazine.org/viewtopic.php?f=48&t=2141579'
 license=('MPLv2')
-depends=('firefox')
 md5sums=('2fdceda82039c594c808be743fe8c59e')
 
 # template input; name=source-xpi
-
-package() {
-  local dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
-  install -d $dstdir
-  cp -r * $dstdir
-}
+# template input; name=package-firefox

@@ -5,13 +5,7 @@ pkgrel=1
 pkgdesc='Smooth dark theme for Firefox'
 url='https://addons.mozilla.org/en-us/firefox/addon/ft-deepdark/'
 license=('custom:noncommercial')
-depends=('firefox')
 md5sums=('78f55cc54ce4678319446512b45e2262')
 
 # template input; name=source-xpi
-
-package() {
-  local dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
-  install -d $dstdir
-  cp -r * $dstdir
-}
+# template input; name=package-firefox

@@ -5,13 +5,7 @@ pkgrel=1
 pkgdesc='Customize your favorite web sites with user styles.'
 url='https://userstyles.org/'
 license=('GPL')
-depends=('firefox')
 md5sums=('591e1f08e1c17b0962280e6330051b3c')
 
 # template input; name=source-xpi
-
-package() {
-  local dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
-  install -d $dstdir
-  cp -r * $dstdir
-}
+# template input; name=package-firefox
