@@ -11,3 +11,4 @@ All templates end with a version number which should be increased on major chang
   - It always fetches a Linux version, if available, by requesting the adequate `platform:2` to the download URL.
   - The version is extracted from the file `install.rdf` which contains meta data included in the add-on.
 - [git-install-rdf](git-install-rdf.template) is an extension of the [git template](https://github.com/dffischer/git-makepkg-template/blob/master/git.template) that generates a `$pkgver` from an `install.rdf` file found in the repository root.
+- [install-rdf-version](install-rdf-version.template) contains just the single line to extract the version from an `install.rdf` file. It is used in the former two templates.

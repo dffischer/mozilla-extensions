@@ -1,0 +1,3 @@
+grep -Pom1 '(?<=<em:version>)[[:digit:]\.]*(?=</em:version>)' install.rdf | tr -d '\n'
+
+# vim: filetype=sh

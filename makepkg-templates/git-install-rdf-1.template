@@ -2,7 +2,8 @@
 
 pkgver() {
   cd $_gitname
-  grep -Pom1 '(?<=<em:version>)[[:digit:]\.]*(?=</em:version>)' install.rdf | tr '\n' '.'
+  # template input; name=install-rdf-version
+  echo -n .
   # template input; name=git-revcount
 }
 
