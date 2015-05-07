@@ -2,7 +2,12 @@
 
 pkgver() {
   cd $_gitname
-  # template input; name=install-rdf-version
+  if [ -f *.json ]
+  then
+    sed -n 's/.*"version"\s*:\s*"\([[:digit:].]*\)"\s*,.*/\1/p' *.json 2>/dev/null | tr -d '\n'
+  else
+    # template input; name=install-rdf-version
+  fi
   echo -n .
   # template input; name=git-revcount
 }

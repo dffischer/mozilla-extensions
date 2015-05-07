@@ -13,12 +13,7 @@ license=('MPL')
 depends=("firefox")
 makedepends=('unzip' 'zip')
 
-# template input; name=git-source
-
-pkgver() {
-  cd $_gitname
-  grep -Pom1 '(?<="version": ").*(?=")' config.json
-}
+# template input; name=git-install-rdf
 
 build() {
   cd $_gitname
