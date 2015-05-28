@@ -2,10 +2,8 @@ target=${pkgname%%-*}
 depends+=($target)
 
 package() {
-  local id="$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
-  local destdir="$pkgdir/usr/lib/${target/firefox/firefox\/browser}/extensions/$id"
-  install -d $destdir
-  cp --no-preserve=ownership,mode -r * $destdir
+  # template input; name=prepare-target
+  # template input; name=install-all
 }
 
 # vim: filetype=sh

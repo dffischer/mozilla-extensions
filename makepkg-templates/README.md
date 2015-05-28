@@ -21,3 +21,15 @@ All templates end with a version number which should be increased on major chang
 - [install-rdf-version](install-rdf-version.template) contains just the single line to extract the version from an `install.rdf` file. It is used in the former two templates.
 
 - [package-single](package-single.template) provides a `package` function installing everything found in the `$srcdir` into an extension directory, whose name is inferred from the `install.rdf` file found amongst there. The target application to install for is expected to be the first dash-separated word of the `$pkgname`.
+
+- <a name="prepare-target" href="prepare-target.template">prepare-target</a> composes the two variables
+
+  - denoting the extension `$id`, which is also the name of the diretory to install the extension to, and
+
+  - the `$destdir` directory where this extension root directory should be placed.
+
+  It also ensures the existance of `$destdir`, but leaves `$destdir/$id` for the user to create as a directory or link.
+
+  To do so, it needs the extensions `install.rdf` present in the current working directory. Which application to target is determined from the first dash separated word of the current `$pkgname`. This variable is assumed to be a scalar, meaning the fragment should only be used in `package` functions when a split package is build and `$pkgname` thus is an array outside their scope.
+
+- [install-all](install-all.template) installs everything found in the current working directory, including hidden files, to `$destdir/$id`. As this may have made you guess, it depends on these variables to be initialized through [the prepare-target template](#user-content-prepare-target) beforehand.

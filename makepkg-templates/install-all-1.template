@@ -1,0 +1,3 @@
+  cp --no-preserve=ownership,mode -r * "$destdir"
+
+# vim: filetype=sh
