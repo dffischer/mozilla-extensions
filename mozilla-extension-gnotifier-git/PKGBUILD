@@ -18,7 +18,6 @@ options=('!emptydirs')
 # template input; name=git-install-rdf
 
 package() {
-  cd $_gitname
   local emid=$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)
   local fxpath="/usr/lib/firefox/browser/extensions/$emid"
   local fxdir="$pkgdir$fxpath"

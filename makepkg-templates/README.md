@@ -16,7 +16,11 @@ All templates end with a version number which should be increased on major chang
 
   - The version is extracted from the file `install.rdf` which contains meta data included in the add-on.
 
-- [git-install-rdf](git-install-rdf.template) is an extension of the [git template](https://github.com/dffischer/git-makepkg-template/blob/master/git.template) that generates a `$pkgver` from an `install.rdf` file found in the repository root. The `install.rdf` or the version string therein are also sometimes generated from a `.json` file. If such is present, it is used instead.
+- [git-install-rdf](git-install-rdf.template) is an extension of the [git template](https://github.com/dffischer/git-makepkg-template/blob/master/git.template).
+
+  - It generates a `$pkgver` from an `install.rdf` file found in the repository root. The `install.rdf` or the version string therein are also sometimes generated from a `.json` file. If such is present, it is used instead.
+
+  - Contrary to normal behavoiur, a `prepare` function will place the contents of the repository directly into `$srcdir`, omitting the `.git` directory, so that `package` functions can just install everything from there to the extension root directory.
 
 - [install-rdf-version](install-rdf-version.template) contains just the single line to extract the version from an `install.rdf` file. It is used in the former two templates.
 

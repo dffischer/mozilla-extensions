@@ -16,7 +16,6 @@ makedepends=('unzip' 'zip')
 # template input; name=git-install-rdf
 
 build() {
-  cd $_gitname
   ./make-xpi.py
 }
 
@@ -24,7 +23,6 @@ package_firefox-theme-gnome-git() {
   provides=('firefox-theme-adwaita' 'firefox-theme-gnome')
   conflicts=('firefox-theme-adwaita' 'firefox-theme-gnome')
 
-  cd $_gitname
   dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' .build/theme/install.rdf)"
 
   install -d "$dstdir"
@@ -35,7 +33,6 @@ package_firefox-extension-gnome-theme-tweak-git() {
   pkgdesc='Extension for customizing GNOME theme.'
   depends=('firefox-theme-gnome')
 
-  cd $_gitname
   dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' .build/extension/install.rdf)"
 
   install -d "$dstdir"

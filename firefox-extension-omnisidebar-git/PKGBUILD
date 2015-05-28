@@ -11,7 +11,6 @@ depends=('firefox')
 # template input; name=git-install-rdf
 
 package() {
-  cd $_gitname
   local dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
   install -d $dstdir
   mv * $dstdir

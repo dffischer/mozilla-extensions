@@ -21,8 +21,6 @@ conflicts=(firefox-gnome-keyring thunderbird-gnome-keyring)
 # template input; name=git-install-rdf
 
 package() {
-  cd $_gitname
-
   local emid="gnome-keyring-integration@sebastianwick.net"
   local fxpath="/usr/lib/firefox/browser/extensions/$emid"
   local fxdir="$pkgdir$fxpath"
