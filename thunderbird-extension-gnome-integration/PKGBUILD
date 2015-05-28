@@ -9,4 +9,4 @@ depends=('libnotify')
 md5sums=('b6832dd3d47a0d19734923f3c5e21a33')
 
 # template input; name=source-xpi
-# template input; name=package
+# template input; name=package-single

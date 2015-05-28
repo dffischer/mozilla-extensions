@@ -8,4 +8,4 @@ license=('custom:noncommercial')
 md5sums=('dca222e21df42ab572975072f83a68c7')
 
 # template input; name=source-xpi
-# template input; name=package
+# template input; name=package-single

@@ -10,4 +10,4 @@ license=('custom')
 md5sums=('20f5e5deb054ca27bee2baa39a783202')
 
 # template input; name=source-xpi
-# template input; name=package
+# template input; name=package-single

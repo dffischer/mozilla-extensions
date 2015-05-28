@@ -8,4 +8,4 @@ license=('MPLv2')
 md5sums=('2fdceda82039c594c808be743fe8c59e')
 
 # template input; name=source-xpi
-# template input; name=package
+# template input; name=package-single
