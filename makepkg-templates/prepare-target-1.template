@@ -1,3 +1,4 @@
+  local target=${pkgname%%-*}
   id="$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
   destdir="$pkgdir/usr/lib/${target/firefox/firefox\/browser}/extensions/$id"
   install -d "$destdir"

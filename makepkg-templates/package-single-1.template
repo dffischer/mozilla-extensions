@@ -1,5 +1,4 @@
-target=${pkgname%%-*}
-depends+=($target)
+depends+=(${pkgname%%-*})
 
 package() {
   # template input; name=prepare-target
