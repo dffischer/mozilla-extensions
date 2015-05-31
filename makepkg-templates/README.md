@@ -26,6 +26,10 @@ All templates end with a version number which should be increased on major chang
 
 - [package-single](package-single.template) provides a `package` function installing everything found in the `$srcdir` into an extension directory, whose name is inferred from the `install.rdf` file found amongst there. The target application to install for is expected to be the first dash-separated word of the `$pkgname`.
 
+- [package-multi](package-multi.template) packages an Add-On that works with multiple applications. The name of the package is expected to start with _mozilla-_, the applications it works with are expected as `$optdepends`.
+
+  Everything found in the `$srcdir` is first installed to a common extension directory. Then, symbolic links pointing there are placed in the directories the respective target applications expect extensions to be installed to. These symlinks are complied as dedicated split packages, their name generated from the original `$pkgname` replacing the starting _mozilla_ with the target application name.
+
 - <a name="prepare-target" href="prepare-target.template">prepare-target</a> composes the two variables
 
   - denoting the extension `$id`, which is also the name of the diretory to install the extension to, and

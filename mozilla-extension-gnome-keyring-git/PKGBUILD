@@ -11,23 +11,14 @@ arch=(any)
 url='https://github.com/swick/moz-gnome-keyring-integration'
 license=(GPLv3)
 depends=(libgnome-keyring)
-optdepends=(
-  'firefox: for firefox plugin'
-  'thunderbird: for thunderbird plugin'
-)
-provides=(firefox-gnome-keyring thunderbird-gnome-keyring)
-conflicts=(firefox-gnome-keyring thunderbird-gnome-keyring)
+optdepends=(firefox thunderbird)
 
 # template input; name=git-install-rdf
 
-package() {
-  local emid="gnome-keyring-integration@sebastianwick.net"
-  local fxpath="/usr/lib/firefox/browser/extensions/$emid"
-  local fxdir="$pkgdir$fxpath"
-  local tbdir="$pkgdir/usr/lib/thunderbird/extensions"
-  install -d "$fxdir" "$tbdir"
-  cp -r install.rdf chrome.manifest components content defaults "$fxdir"
-  ln -s "$fxpath" "$tbdir/$emid"
+build() {
+  rm LICENSE Makefile
 }
+
+# template input; name=package-multi
 
 # vim:set ts=2 sw=2 et:

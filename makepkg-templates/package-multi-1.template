@@ -1,0 +1,28 @@
+eval "package_$pkgname()" '{
+  prepare_target
+  # template input; name=install-all
+}'
+
+for target in "${optdepends[@]}"; do
+  local newname="${target/%/-${pkgname[0]#mozilla-}}"
+  pkgname+=("$newname")
+  eval "package_$newname() {
+    # Package relations have to be here and not in link for makepkg -S to find them.
+    depends=($target ${pkgname[0]}=$pkgver)
+    provides=()
+    conflicts=()
+    link $target
+  }"
+done
+optdepends=()
+
+prepare_target() {
+  # template input; name=prepare-target
+}
+
+link() {
+  prepare_target
+  ln -s "/usr/lib/mozilla/extensions/$id" "$destdir/$id"
+}
+
+# vim: filetype=sh
