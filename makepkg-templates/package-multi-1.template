@@ -8,13 +8,36 @@ for target in "${optdepends[@]}"; do
   pkgname+=("$newname")
   eval "package_$newname() {
     # Package relations have to be here and not in link for makepkg -S to find them.
-    depends=($target ${pkgname[0]}=$pkgver)
+    depends=(
+      \"$target>=\$(version min \$(emid-for $target))\"
+      \"$target<=\$(version max \$(emid-for $target))\"
+      ${pkgname[0]}=$pkgver
+    )
     provides=()
     conflicts=()
     link $target
   }"
 done
 optdepends=()
+
+emid-for() {
+  case $1 in
+    firefox)     echo '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}' ;;
+    thunderbird) echo '{3550f703-e582-4d05-9a08-453d09bdfdc6}' ;;
+    *) return 1 ;;
+  esac
+}
+
+version() {
+  xmllint --xpath "
+    //*[local-name()='targetApplication']
+    /*[local-name()='Description']
+    /*[local-name()='id'][text()='$2']
+    /..
+    /*[local-name()='$1Version']
+    /text()
+  " "$srcdir/install.rdf" | sed 's/.\*//g'
+}
 
 prepare_target() {
   # template input; name=prepare-target
