@@ -1,0 +1,9 @@
+# template input; name=git-source
+
+# Move down repository content for easier access by following functions.
+prepare() {
+  cp -rf --reflink=auto "$_gitname"/* .
+  rm -rf "$_gitname"
+}
+
+# vim: filetype=sh

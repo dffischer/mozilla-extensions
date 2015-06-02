@@ -16,13 +16,13 @@ All templates end with a version number which should be increased on major chang
 
   - The version is extracted from the file `install.rdf` which contains meta data included in the add-on.
 
-- [git-install-rdf](git-install-rdf.template) is an extension of the [git template](https://github.com/dffischer/git-makepkg-template/blob/master/git.template).
+- [source-git-plain](source-git-plain.template) is an extension of the [git template](https://github.com/dffischer/git-makepkg-template/blob/master/git.template) augmenting it by a `prepare` function that will place the contents of the repository directly into `$srcdir`, omitting the `.git` directory, so that `package` functions can just install everything from there to the extension root directory. For practical use, you may rather want to employ one of the two following variants that also automatically extract a package version.
 
-  - It generates a `$pkgver` from an `install.rdf` file found in the repository root. The `install.rdf` or the version string therein are also sometimes generated from a `.json` file. If such is present, it is used instead.
+- [source-git-rdf](source-git-rdf.template) further extends this with a `pkgver` function that extracts the version from an `install.rdf` file found in the repository root.
 
-  - Contrary to normal behavoiur, a `prepare` function will place the contents of the repository directly into `$srcdir`, omitting the `.git` directory, so that `package` functions can just install everything from there to the extension root directory.
+- [source-git-json](source-git-json.template) looks for a `.json` file instead. Use this over the former for Add-Ons that generate the `install.rdf` using this JSON description.
 
-- [install-rdf-version](install-rdf-version.template) contains just the single line to extract the version from an `install.rdf` file. It is used in the former two templates.
+- [install-rdf-version](install-rdf-version.template) contains just the single line to extract the version from an `install.rdf` file.
 
 - [package-single](package-single.template) provides a `package` function installing everything found in the `$srcdir` into an extension directory, whose name is inferred from the `install.rdf` file found amongst there. The target application to install for is expected to be the first dash-separated word of the `$pkgname`.
 

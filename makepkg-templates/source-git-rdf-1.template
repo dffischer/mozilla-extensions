@@ -1,0 +1,10 @@
+# template input; name=source-git-plain
+
+pkgver() {
+  cd $_gitname
+  # template input; name=install-rdf-version
+  echo -n .
+  # template input; name=git-revcount
+}
+
+# vim: filetype=sh

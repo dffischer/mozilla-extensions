@@ -10,7 +10,7 @@ depends=('libnotify')
 optdepends=(firefox thunderbird)
 options=('!emptydirs')
 
-# template input; name=git-install-rdf
+# template input; name=source-git-json
 
 build() {
   rm -r data doc *.xpi misc package.json *.md screenshot*.png server-info test* win8*

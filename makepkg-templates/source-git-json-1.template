@@ -1,0 +1,10 @@
+# template input; name=source-git-plain
+
+pkgver() {
+  cd "$_gitname"
+  sed -n 's/.*"version"\s*:\s*"\([[:digit:].]*\)"\s*,.*/\1/p' \
+    *.json 2>/dev/null | tr '\n' '.'
+  # template input; name=git-revcount
+}
+
+# vim: filetype=sh

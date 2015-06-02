@@ -8,5 +8,5 @@ arch=('any')
 license=('MPLv2')
 depends=('firefox')
 
-# template input; name=git-install-rdf
+# template input; name=source-git-rdf
 # template input; name=package-single

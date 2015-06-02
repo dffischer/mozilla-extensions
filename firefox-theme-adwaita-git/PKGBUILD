@@ -13,7 +13,7 @@ license=('MPL')
 depends=("firefox")
 makedepends=('unzip' 'zip')
 
-# template input; name=git-install-rdf
+# template input; name=source-git-json
 
 build() {
   ./make-xpi.py
