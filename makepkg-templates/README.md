@@ -4,6 +4,9 @@ As comments in the template code are not stripped when they are input, this file
 
 All templates end with a version number which should be increased on major changes. There always exists a symbolic link to the newest version, lacking any number.
 
+
+## Retrieving and preparing sources and versions
+
 - [source-xpi](source-xpi.template) downloads and extracts the latest version of a package and looks up the `$pkgver`.
 
   - The extension contents are placed unpacked in the `$srcdir`.
@@ -23,6 +26,9 @@ All templates end with a version number which should be increased on major chang
 - [source-git-json](source-git-json.template) looks for a `.json` file instead. Use this over the former for Add-Ons that generate the `install.rdf` using this JSON description.
 
 - [install-rdf-version](install-rdf-version.template) contains just the single line to extract the version from an `install.rdf` file.
+
+
+# Package Composition
 
 - [package-single](package-single.template) provides a `package` function installing everything found in the `$srcdir` into an extension directory, whose name is inferred from the `install.rdf` file found amongst there. The target application to install for is expected to be the first dash-separated word of the `$pkgname`.
 
