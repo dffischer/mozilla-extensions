@@ -1,5 +1,7 @@
 # template input; name=source-git-plain
 
+makedepends+=(libxml2)
+
 pkgver() {
   cd $_gitname
   # template input; name=install-rdf-version

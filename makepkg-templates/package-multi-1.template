@@ -1,3 +1,5 @@
+makedepends+=(libxml2)
+
 eval "package_$pkgname()" '{
   prepare_target
   # template input; name=install-all

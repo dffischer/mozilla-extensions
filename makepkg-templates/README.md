@@ -25,7 +25,7 @@ All templates end with a version number which should be increased on major chang
 
 - [source-git-json](source-git-json.template) looks for a `.json` file instead. Use this over the former for Add-Ons that generate the `install.rdf` using this JSON description.
 
-- [install-rdf-version](install-rdf-version.template) contains just the single line to extract the version from an `install.rdf` file.
+- [install-rdf-version](install-rdf-version.template) contains just the single line to extract the version from an `install.rdf` file. It uses `xmllint` to do so, thus  _libxml2_ should be added to the make dependencies when this template is used.
 
 
 # Package Composition
