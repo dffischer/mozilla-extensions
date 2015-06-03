@@ -12,6 +12,8 @@ url='https://github.com/swick/moz-gnome-keyring-integration'
 license=(GPLv3)
 depends=(libgnome-keyring)
 optdepends=(firefox thunderbird)
+provides=({firefox,thunderbird}-gnome-keyring)
+conflicts=({firefox,thunderbird}-gnome-keyring{,-git,-bin})
 
 # template input; name=source-git-rdf
 
