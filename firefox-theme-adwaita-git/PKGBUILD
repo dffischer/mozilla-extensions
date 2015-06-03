@@ -21,11 +21,14 @@ build() {
   ./make-xpi.py
 }
 
-package_firefox-theme-gnome-git() {
-  dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' .build/theme/install.rdf)"
+package() {
+  cd .build/$1
+  # template input; name=prepare-target
+  unzip -d "$destdir/$id" ../../gnome-firefox-$1.xpi
+}
 
-  install -d "$dstdir"
-  unzip -d "$dstdir" gnome-firefox-theme.xpi
+package_firefox-theme-gnome-git() {
+  package theme
 }
 
 package_firefox-extension-gnome-theme-tweak-git() {
@@ -34,8 +37,5 @@ package_firefox-extension-gnome-theme-tweak-git() {
   pkgdesc='Extension for customizing GNOME theme.'
   depends=('firefox-theme-gnome')
 
-  dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' .build/extension/install.rdf)"
-
-  install -d "$dstdir"
-  unzip -d "$dstdir" gnome-firefox-extension.xpi
+  package extension
 }
