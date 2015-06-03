@@ -1,6 +1,7 @@
-depends+=(${pkgname%%-*})
+# template input; name=install-rdf-targets
 
 package() {
+  depends=($(version-range ${pkgname%%-*}))
   # template input; name=prepare-target
   # template input; name=install-all
 }
