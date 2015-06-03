@@ -9,8 +9,8 @@ for target in "${optdepends[@]}"; do
   eval "package_$newname() {
     # Package relations have to be here and not in link for makepkg -S to find them.
     depends=(\$(version-range $target) ${pkgname[0]}=$pkgver)
-    provides=(${newname%-git})
-    conflicts=(${newname%-git})
+    provides=(\$(if [[ $newname = *-git ]]; then echo ${newname%-git}; fi))
+    conflicts=(\$(if [[ $newname = *-git ]]; then echo ${newname%-git}; fi))
     link $target
   }"
 done
