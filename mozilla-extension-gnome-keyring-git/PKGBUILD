@@ -22,5 +22,3 @@ build() {
 }
 
 # template input; name=package-multi
-
-# vim:set ts=2 sw=2 et:
