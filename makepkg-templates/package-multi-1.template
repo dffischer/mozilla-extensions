@@ -10,17 +10,18 @@ for target in "${optdepends[@]}"; do
   pkgname+=("$newname")
   eval "package_$newname() {
     # Package relations have to be here and not in link for makepkg -S to find them.
-    depends=(
-      \"$target>=\$(version min \$(emid-for $target))\"
-      \"$target<=\$(version max \$(emid-for $target))\"
-      ${pkgname[0]}=$pkgver
-    )
+    depends=(\$(version-range $target) ${pkgname[0]}=$pkgver)
     provides=()
     conflicts=()
     link $target
   }"
 done
 optdepends=()
+
+version-range() {
+  local emid=$(emid-for $1)
+  echo "$1>=$(version min $emid)" "$1<=$(version max $emid)"
+}
 
 emid-for() {
   case $1 in
