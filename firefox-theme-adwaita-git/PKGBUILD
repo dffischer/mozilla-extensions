@@ -11,6 +11,8 @@ url="https://github.com/gnome-integration-team/firefox-gnome"
 arch=('any')
 license=('MPL')
 depends=("firefox")
+provides=('firefox-theme-gnome')
+conflicts=('firefox-theme-gnome')
 makedepends=('unzip' 'zip')
 
 # template input; name=source-git-json
@@ -20,9 +22,6 @@ build() {
 }
 
 package_firefox-theme-gnome-git() {
-  provides=('firefox-theme-adwaita' 'firefox-theme-gnome')
-  conflicts=('firefox-theme-adwaita' 'firefox-theme-gnome')
-
   dstdir="$pkgdir/usr/lib/firefox/browser/extensions/$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' .build/theme/install.rdf)"
 
   install -d "$dstdir"
@@ -30,6 +29,8 @@ package_firefox-theme-gnome-git() {
 }
 
 package_firefox-extension-gnome-theme-tweak-git() {
+  provides=('firefox-extension-gnome-theme-tweak')
+  conflicts=('firefox-extension-gnome-theme-tweak')
   pkgdesc='Extension for customizing GNOME theme.'
   depends=('firefox-theme-gnome')
 
