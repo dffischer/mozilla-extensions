@@ -1,12 +1,12 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
 pkgname=mozilla-extension-stylish
-pkgver=2.0.1
+pkgver=2.0.2.1.signed
 pkgrel=1
 pkgdesc='Customize your favorite web sites with user styles.'
 url='https://userstyles.org/'
 license=('GPL')
 optdepends=(firefox thunderbird)
-md5sums=('591e1f08e1c17b0962280e6330051b3c')
+md5sums=('dc969fd70bb672726f40261ed14cb70e')
 
 # template input; name=source-xpi
 # template input; name=package-multi

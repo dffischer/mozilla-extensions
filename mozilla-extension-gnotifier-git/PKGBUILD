@@ -1,6 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
 pkgname=mozilla-extension-gnotifier-git
-pkgver=1.8.7
+pkgver=1.9.0.r106.4deb67b
 pkgrel=1
 pkgdesc='Add-on for Firefox and Thunderbird to enable integration with GNOME native notification system.'
 url='https://github.com/mkiol/GNotifier'

@@ -1,6 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
 pkgname=thunderbird-theme-tt-deepdark
-pkgver=9.4.2
+pkgver=10.0.1
 pkgrel=1
 pkgdesc='Smooth dark theme for Thunderbird'
 url='https://addons.mozilla.org/de/thunderbird/addon/tt-deepdark/'

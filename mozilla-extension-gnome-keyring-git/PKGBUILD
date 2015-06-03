@@ -4,7 +4,7 @@
 # Contributor: bzt <unmacaque@gmail.com>
 
 pkgname=mozilla-extension-gnome-keyring-git
-pkgver=0.5
+pkgver=0.9.r27.e057802
 pkgrel=1
 pkgdesc="Mozilla extension to store passwords and form logins in gnome-keyring."
 arch=(any)

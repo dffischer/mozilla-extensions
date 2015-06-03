@@ -1,6 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
 pkgname=firefox-theme-ft-deepdark
-pkgver=12.0
+pkgver=12.0.1
 pkgrel=1
 pkgdesc='Smooth dark theme for Firefox'
 url='https://addons.mozilla.org/en-us/firefox/addon/ft-deepdark/'

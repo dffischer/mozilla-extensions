@@ -1,11 +1,11 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
 pkgname=firefox-extension-hide-tab-bar-with-one-tab
-pkgver=1.4
+pkgver=1.5.1.signed
 pkgrel=1
 pkgdesc='Hide the tab bar if there is only one tab.'
 url='http://forums.mozillazine.org/viewtopic.php?f=48&t=2141579'
 license=('MPLv2')
-md5sums=('2fdceda82039c594c808be743fe8c59e')
+md5sums=('0177f69d998d66a9f181b5744bee21a1')
 
 # template input; name=source-xpi
 # template input; name=package-single
