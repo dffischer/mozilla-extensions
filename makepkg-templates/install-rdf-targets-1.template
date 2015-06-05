@@ -2,7 +2,7 @@ makedepends+=(libxml2)
 
 version-range() {
   local emid=$(emid $1)
-  echo "$1>=$(version min $emid)" "$1<=$(version max $emid)"
+  echo "$1>$(version min $emid)" "$1<$(version max $emid)"
 }
 
 emid() {
@@ -14,14 +14,23 @@ emid() {
 }
 
 version() {
-  xmllint --xpath "
+  local version=$(xmllint --xpath "
     //*[local-name()='targetApplication']
     /*[local-name()='Description']
     /*[local-name()='id'][text()='$2']
     /..
     /*[local-name()='$1Version']
     /text()
-  " "$srcdir/install.rdf" | sed 's/.\*//g'
+  " "$srcdir/install.rdf" )
+  if [[ $version =~ ([[:digit:]]+).\* ]]; then
+    if [[ $1 = max ]]; then
+      echo $(( ${BASH_REMATCH[1]} + 1 ))
+    else
+      echo "=${BASH_REMATCH[1]}"
+    fi
+  else
+    echo "=$version"
+  fi
 }
 
 # vim: filetype=sh
