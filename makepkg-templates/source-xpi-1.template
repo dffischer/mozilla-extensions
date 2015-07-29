@@ -6,8 +6,10 @@ prepare() {
   rm ${pkgname}.zip
 }
 
+# template input; name=rdf-query
+
 pkgver() {
-  # template input; name=install-rdf-version
+  sparql '<urn:mozilla:install-manifest> em:version ?x' | tr - .
 }
 
 # vim: filetype=sh

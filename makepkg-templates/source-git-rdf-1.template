@@ -1,10 +1,10 @@
 # template input; name=source-git-plain
 
-makedepends+=(libxml2)
+# template input; name=rdf-query
 
 pkgver() {
   cd $_gitname
-  # template input; name=install-rdf-version
+  sparql '<urn:mozilla:install-manifest> em:version ?x' | tr - .
   echo -n .
   # template input; name=git-revcount
 }

@@ -1,3 +1,0 @@
-xmllint --xpath '//*[local-name()="version"]/text()' install.rdf | tr - .
-
-# vim: filetype=sh

@@ -21,9 +21,11 @@ build() {
   ./make-xpi.py
 }
 
+# template input; name=prepare-target
+
 package() {
   cd .build/$1
-  # template input; name=prepare-target
+  prepare_target
   unzip -d "$destdir/$id" ../../gnome-firefox-$1.xpi
 }
 

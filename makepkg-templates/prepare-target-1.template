@@ -1,6 +1,10 @@
+# template input; name=rdf-query
+
+prepare_target() {
   local target=${pkgname%%-*}
-  id="$(grep -Pom1 '(?<=<em:id>).*(?=</em:id>)' install.rdf)"
+  id="$(sparql '<urn:mozilla:install-manifest> em:id ?x')"
   destdir="$pkgdir/usr/lib/${target/firefox/firefox\/browser}/extensions"
   install -d "$destdir"
+}
 
 # vim: filetype=sh

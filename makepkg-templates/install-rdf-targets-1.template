@@ -1,4 +1,4 @@
-makedepends+=(libxml2)
+# template input; name=rdf-query
 
 version-range() {
   local emid=$(emid $1)
@@ -14,14 +14,9 @@ emid() {
 }
 
 version() {
-  local version=$(xmllint --xpath "
-    //*[local-name()='targetApplication']
-    /*[local-name()='Description']
-    /*[local-name()='id'][text()='$2']
-    /..
-    /*[local-name()='$1Version']
-    /text()
-  " "$srcdir/install.rdf" )
+  local version;
+  version=$(sparql "[] em:id '$2' ; em:${1}Version ?x" \
+    "$srcdir/install.rdf" )
   if [[ $version =~ ([[:digit:]]+).\* ]]; then
     if [[ $1 = max ]]; then
       echo $(( ${BASH_REMATCH[1]} + 1 ))

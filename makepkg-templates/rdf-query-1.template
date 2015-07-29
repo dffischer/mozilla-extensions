@@ -1,0 +1,8 @@
+makedepends+=(rasqal)
+
+sparql() {
+  roqet -e "PREFIX em: <http://www.mozilla.org/2004/em-rdf#> SELECT ?x WHERE { $1 }" \
+    -D "${2:-install.rdf}" -r csv 2>/dev/null | tr -d '\r' | tail -n 1 | head -c -1
+}
+
+# vim: filetype=sh

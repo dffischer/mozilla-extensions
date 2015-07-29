@@ -1,10 +1,11 @@
 # template input; name=install-rdf-targets
+# template input; name=prepare-target
 
 depends=(${pkgname%%-*})
 
 package() {
   compose_dependencies
-  # template input; name=prepare-target
+  prepare_target
   # template input; name=install-all
 }
 
