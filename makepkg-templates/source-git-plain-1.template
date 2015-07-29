@@ -4,6 +4,7 @@
 prepare() {
   cp -rf --reflink=auto "$_gitname"/* .
   rm -rf "$_gitname"
+  find -name '.git*' -exec rm -rf '{}' +
 }
 
 # vim: filetype=sh
