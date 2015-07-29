@@ -32,13 +32,9 @@ All templates end with a version number which should be increased on major chang
 
 - [package-single](package-single.template) provides a `package` function installing everything found in the `$srcdir` into an extension directory, whose name is inferred from the `install.rdf` file found amongst there. The target application to install for is expected to be the first dash-separated word of the `$pkgname`.
 
-  Version information is collected from the Add-On's `install.rdf` file, so [the remarks for `install-rdf-targets` apply](#user-content-needs-source).
-
 - [package-multi](package-multi.template) packages an Add-On that works with multiple applications. The name of the package is expected to start with _mozilla-_, the applications it works with are expected as `$optdepends`.
 
   Everything found in the `$srcdir` is first installed to a common extension directory. Then, symbolic links pointing there are placed in the directories the respective target applications expect extensions to be installed to. These symlinks are complied as dedicated split packages, their name generated from the original `$pkgname` replacing the starting _mozilla_ with the target application name. Replacing the original `$optdepends` by split packages all interrelated is necessary to correctly track the dependent versions as Pacman as of [bug 44957](https://bugs.archlinux.org/index.php?do=details&task_id=44957) currently does not look at the version restriction of optional dependencies.
-
-  As this queries version information from the Add-On's `install.rdf` file, [the remarks for `install-rdf-targets` apply](#user-content-needs-source).
 
 - <a name="prepare-target" href="prepare-target.template">prepare-target</a> composes the two variables
 
@@ -63,5 +59,3 @@ All templates end with a version number which should be increased on major chang
     - the target application `em:id` most likely obtained by quering [the `emid` function](#user-content-emid).
 
   - `version-range` needs the application name as only argument and returns package relation specifiers to restrict the target application version suited to place into `PKGBUILD` arrays like `$depends`. It will return two array elements, so when used with command substituation, do not place the results in quotes.
-
-  <a name="needs-source">Because these version numbers are extracted from the _install.rdf_ file found in the `$srcdir`, the `.SRCINFO` of `PKGBUILD`s utilizing this template can only be correctly generated after the sources are downloaded and extracted. It is advised to run `makepkg` to compile the package before executing `makepkg -S`, `makeaurball`, `mksrcinfo` or anything alike.</a>

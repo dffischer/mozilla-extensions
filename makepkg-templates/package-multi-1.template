@@ -7,8 +7,8 @@ for target in "${optdepends[@]}"; do
   local newname="${target/%/-${pkgname[0]#mozilla-}}"
   pkgname+=("$newname")
   eval "package_$newname() {
-    # Package relations have to be here and not in link for makepkg -S to find them.
-    depends=(\$(version-range $target) ${pkgname[0]}=$pkgver)
+    # Unversioned package relations have to be here and not in link for mksrcinfo to find them.
+    depends=(${pkgname[0]}=$pkgver $target)
     provides=(\$(if [[ $newname = *-git ]]; then echo ${newname%-git}; fi))
     conflicts=(\$(if [[ $newname = *-git ]]; then echo ${newname%-git}; fi))
     link $target
@@ -23,6 +23,9 @@ prepare_target() {
 }
 
 link() {
+  depends+=($(version-range $1))
+  unset depends[1]
+
   prepare_target
   ln -s "/usr/lib/mozilla/extensions/$id" "$destdir/$id"
 }
