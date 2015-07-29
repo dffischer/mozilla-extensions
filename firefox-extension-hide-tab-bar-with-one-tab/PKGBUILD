@@ -1,4 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
 pkgname=firefox-extension-hide-tab-bar-with-one-tab
 pkgver=1.5.1.signed
 pkgrel=1

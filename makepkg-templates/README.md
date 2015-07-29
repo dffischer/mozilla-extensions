@@ -70,6 +70,11 @@ All templates end with a version number which should be increased on major chang
 
   As this template uses [rdf-query](#user-content-rdf-query), [it should only be deployed at top level scope](#user-content-toplevel).
 
+
+# Various Helpers
+
 - <a name="rdf-query" href="rdf-query.template">rdf-query</a> contains a function `sparql` to query the _install.rdf_ files. Its first argument is the WHERE part of a SPARQL query, without braces. The `em:` prefix as defined in Mozilla's _install.rdf_ is readily available to use in there. The second argument should be the file to run the query on, if it differs from _install.rdf_. It will return one valid assignment for the variable `?x` from the query.
 
   <a name="toplevel">This template should never be included inside function scope, as it has to add to the `$makedepends` array. It is used as a sort of library function by many of the other templates.</a>
+
+- [github](github.template) contains a notice to this repositories location as a comment, where all the PKGBUILDs are maintained. It is intended to be placed directly under the list of maintainer and contributors to the PKGBUILD.

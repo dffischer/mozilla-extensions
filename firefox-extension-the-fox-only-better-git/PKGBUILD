@@ -1,4 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
 pkgname=firefox-extension-the-fox-only-better-git
 pkgver=1.2.1.r349.501e6ef
 pkgrel=1

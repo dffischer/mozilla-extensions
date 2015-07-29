@@ -1,4 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
 pkgname=firefox-extension-flash-video-downloader
 pkgver=7.3.1.1.signed
 pkgrel=1

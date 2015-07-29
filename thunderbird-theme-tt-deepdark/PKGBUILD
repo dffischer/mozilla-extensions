@@ -1,4 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
 pkgname=thunderbird-theme-tt-deepdark
 pkgver=10.0.1
 pkgrel=1

@@ -1,4 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
 pkgname=thunderbird-extension-gnome-integration
 pkgver=0.4.4
 pkgrel=1

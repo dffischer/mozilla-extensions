@@ -1,4 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
 pkgname=firefox-extension-omnisidebar-git
 pkgver=1.5.4.r437.abcd004
 pkgrel=1

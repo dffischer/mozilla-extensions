@@ -1,5 +1,6 @@
 # Maintainer: XZS
 # Adapted from PKGBUILDs for firefox themes by Tianjiao Yin <ytj000+aur@gmail.com>
+# template input; name=github
 
 pkgname=firefox-theme-nasa-night-launch
 pkgdesc="Dark theme for Firefox. Inspired by the night launch of STS-116."

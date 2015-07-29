@@ -1,4 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
 pkgname=mozilla-extension-stylish
 pkgver=2.0.2.1.signed
 pkgrel=1

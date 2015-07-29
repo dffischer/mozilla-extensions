@@ -1,5 +1,6 @@
 # Maintainer: XZS <d.f.fischer at web dot de>
 # Contributor: Diego Principe <cdprincipe@at@gmail@dot@com>
+# template input; name=github
 
 pkgbase='firefox-theme-adwaita-git'
 _gitname=${pkgbase%-git}

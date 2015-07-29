@@ -2,6 +2,7 @@
 # Contributor: hashstat <hashstat .AT. yahoo .DOT. com>
 # Contributor: Anshuman Bhaduri <anshuman dot bhaduri0 at gmail dot com>
 # Contributor: bzt <unmacaque@gmail.com>
+# template input; name=github
 
 pkgname=mozilla-extension-gnome-keyring-git
 pkgver=0.9.r27.e057802
