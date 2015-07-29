@@ -2,12 +2,12 @@
 # template input; name=github
 
 pkgname=thunderbird-theme-tt-deepdark
-pkgver=10.0.1
+pkgver=10.0.2
 pkgrel=1
 pkgdesc='Smooth dark theme for Thunderbird'
 url='https://addons.mozilla.org/de/thunderbird/addon/tt-deepdark/'
 license=('custom:noncommercial')
-md5sums=('dca222e21df42ab572975072f83a68c7')
+md5sums=('1f0145655476a796b9a07986017cc5db')
 
 # template input; name=source-xpi
 # template input; name=package-single

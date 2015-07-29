@@ -2,7 +2,7 @@
 # template input; name=github
 
 pkgname=firefox-extension-omnisidebar-git
-pkgver=1.5.4.r437.abcd004
+pkgver=1.6.1.r475.8cbbf43
 pkgrel=1
 pkgdesc='A firefox add-on designed to provide more control over the behavior of the sidebar.'
 url='https://github.com/Quicksaver/OmniSidebar'

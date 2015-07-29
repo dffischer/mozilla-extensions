@@ -2,12 +2,12 @@
 # template input; name=github
 
 pkgname=firefox-theme-ft-deepdark
-pkgver=12.0.1
+pkgver=12.1.0
 pkgrel=1
 pkgdesc='Smooth dark theme for Firefox'
 url='https://addons.mozilla.org/en-us/firefox/addon/ft-deepdark/'
 license=('custom:noncommercial')
-md5sums=('78f55cc54ce4678319446512b45e2262')
+md5sums=('53b1b74d14a260bec8f55a61f0f47c0e')
 
 # template input; name=source-xpi
 # template input; name=package-single

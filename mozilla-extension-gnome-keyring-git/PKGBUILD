@@ -5,7 +5,7 @@
 # template input; name=github
 
 pkgname=mozilla-extension-gnome-keyring-git
-pkgver=0.9.r27.e057802
+pkgver=0.10.r36.378d9f3
 pkgrel=1
 pkgdesc="Mozilla extension to store passwords and form logins in gnome-keyring."
 arch=(any)
