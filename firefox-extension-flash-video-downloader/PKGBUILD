@@ -1,0 +1,11 @@
+# Maintainer: XZS <d.f.fischer at web dot de>
+pkgname=firefox-extension-flash-video-downloader
+pkgver=7.3.1.1.signed
+pkgrel=1
+pkgdesc='download your favorite videos in 1 click'
+url='http://www.flashvideodownloader.org/'
+license=('MPLv1.1')
+md5sums=('ee49d420a55574f967cbb02138d93541')
+
+# template input; name=source-xpi
+# template input; name=package-single
