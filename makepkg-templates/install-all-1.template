@@ -1,3 +1,4 @@
   cp --no-preserve=ownership,mode -r . "$destdir/$id"
+  find "$destdir/$id" -mindepth 1 -name ".*" -exec rm -rf '{}' +
 
 # vim: filetype=sh
