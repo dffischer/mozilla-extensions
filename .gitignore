@@ -4,4 +4,4 @@ PKGBUILD.expanded
 *.pkg.tar*
 */*/
 *.zip
-version
+.version
