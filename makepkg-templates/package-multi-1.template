@@ -16,7 +16,7 @@ for target in "${optdepends[@]}"; do
 done
 optdepends=()
 
-# template input; name=install-rdf-targets
+# template input; name=targets
 # template input; name=prepare-target
 
 link() {

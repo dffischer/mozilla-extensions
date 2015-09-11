@@ -56,7 +56,7 @@ All templates end with a version number which should be increased on major chang
 
 - [install-all](install-all.template) installs everything found in the current working directory, including hidden files, to `$destdir/$id`. As this may have made you guess, it depends on these variables to be initialized through [the prepare-target template](#user-content-prepare-target) beforehand.
 
-- [install-rdf-targets](install-rdf-targets.template) contains functions to collect information about target applications from the `install.rdf`.
+- [targets](targets.template) contains functions to collect information about target applications from the `install.rdf`.
 
   - <a name="emid">`emid`</a> accepts an application name as only argument and turns it into the corresponding identifier that is used to denote this applicaiton within an `<em:id>` tag.
 

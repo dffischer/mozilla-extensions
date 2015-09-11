@@ -1,4 +1,4 @@
-# template input; name=install-rdf-targets
+# template input; name=targets
 # template input; name=prepare-target
 
 depends=(${pkgname%%-*})
