@@ -12,4 +12,11 @@ pkgver() {
   sparql '<urn:mozilla:install-manifest> em:version ?x' | tr - .
 }
 
+# template input; name=rdf-query
+
+# Retrieve current compatibility information from install.rdf.
+query-version() {
+  sparql "[] em:id '$2' ; em:${1}Version ?x" install.rdf
+}
+
 # vim: filetype=sh
