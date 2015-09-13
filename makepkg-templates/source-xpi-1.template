@@ -1,6 +1,10 @@
 [ "$arch" ] || arch=('any')
 
-source+=("${pkgname}.zip::https://addons.mozilla.org/firefox/downloads/latest/${pkgname#*-*-}/platform:2/")
+source+=(
+  "${pkgname}.zip::https://addons.mozilla.org/firefox/downloads/latest/${pkgname#*-*-}/platform:2/"
+  "version::https://services.addons.mozilla.org/firefox/api/1.5/addon/${pkgname#*-*-}"
+)
+md5sums+=('SKIP')
 
 prepare() {
   rm ${pkgname}.zip
@@ -12,11 +16,10 @@ pkgver() {
   sparql '<urn:mozilla:install-manifest> em:version ?x' | tr - .
 }
 
-# template input; name=rdf-query
-
-# Retrieve current compatibility information from install.rdf.
+# Retrieve current compatibility information from addons.mozilla.org API.
 query-version() {
-  sparql "[] em:id '$2' ; em:${1}Version ?x" install.rdf
+  xmllint version --xpath \
+    "//application[appID='$2']/$1_version/text()"
 }
 
 # vim: filetype=sh

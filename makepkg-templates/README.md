@@ -19,7 +19,7 @@ All templates end with a version number which should be increased on major chang
 
   - The version is extracted from the file `install.rdf` which contains meta data included in the add-on.
 
-  - [A function `query-version`](#user-content-needs-query-version) is provided to retrieve information from the `install.rdf` file situated in the current working directory.
+  - Compatible target application versions can be retrieved from the addons.mozilla.org API description of the Add-On, which is downloaded as a source file, using [the function `query-version`](#user-content-needs-query-version). This is usually more up to date than the information included in the `install.rdf` file, especially when the Add-On was released before the current Firefox version.
 
   As this template uses [rdf-query](#user-content-rdf-query), [it should only be deployed at top level scope](#user-content-toplevel).
 
