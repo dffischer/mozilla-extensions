@@ -2,8 +2,9 @@
 
 pkgver() {
   cd "$_gitname"
-  sed -n 's/.*"version"\s*:\s*"\([[:digit:].]*\)"\s*,.*/\1/p' \
-    *.json 2>/dev/null | tr '\n' '.'
+  find -iname '*.json' -exec sed -n \
+    's/.*"version"\s*:\s*"\([[:digit:].]*\)"\s*,.*/\1/p' \
+    '{}' \; -quit 2>/dev/null | tr '\n' '.'
   # template input; name=git-revcount
 }
 
