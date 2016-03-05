@@ -3,7 +3,6 @@
 # template input; name=rdf-query
 
 pkgver() {
-  cd $_gitname
   sparql '<urn:mozilla:install-manifest> em:version ?x' | tr - .
   echo -n .
   # template input; name=git-revcount
