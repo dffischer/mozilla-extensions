@@ -1,0 +1,15 @@
+# Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
+pkgname=firefox-theme-gnome
+pkgver=45.1
+pkgrel=1
+pkgdesc='GNOME 3 theme for Firefox — Previously known as "Adwaita"'
+_extname=adwaita
+arch=('any')
+license=('MPLv2')
+depends=('firefox')
+md5sums=('79a0bacbde8c43927dab49271c043952')
+
+# template input; name=source-xpi
+# template input; name=package-single

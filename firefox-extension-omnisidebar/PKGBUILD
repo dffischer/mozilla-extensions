@@ -1,0 +1,14 @@
+# Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
+pkgname=firefox-extension-omnisidebar
+pkgver=1.6.12
+pkgrel=1
+pkgdesc='A firefox add-on designed to provide more control over the behavior of the sidebar.'
+arch=('any')
+license=('MPLv2')
+depends=('firefox')
+md5sums=('f1d3d2d524eae66becd4df650e2fb200')
+
+# template input; name=source-xpi
+# template input; name=package-single

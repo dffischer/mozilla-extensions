@@ -1,0 +1,14 @@
+# Maintainer: XZS <d.f.fischer at web dot de>
+# template input; name=github
+
+pkgname=firefox-extension-gnome-theme-tweak
+pkgver=42.1
+pkgrel=1
+pkgdesc='Extension for customizing GNOME theme.'
+arch=('any')
+license=('MPLv2')
+depends=('firefox-theme-gnome')
+md5sums=('c7a571c9eb70d671cbbec08973d37e4f')
+
+# template input; name=source-xpi
+# template input; name=package-single
